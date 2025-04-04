@@ -64,7 +64,7 @@ all_data$share_Poland = all_data$Poland/all_data$total_Poland
 # Now let's look at the task data. We want the first digit of the ISCO variable only
 library(stringr)
 
-task_data$isco08_1dig <- str_sub(task_data$isco08, 1, 1) %>% as.numeric()
+task_data$isco08_1dig <- str_sub(task_data$isco08, 1, 2) %>% as.numeric()
 
 # And we'll calculate the mean task values at a 1-digit level 
 # (more on what these tasks are below)
