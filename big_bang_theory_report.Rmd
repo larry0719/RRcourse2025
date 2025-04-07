@@ -1,8 +1,18 @@
 ---
-title: "The Big Bang Theory Viewership Report"
+---
+title: "📺 The Big Bang Theory Viewership Report"
 author: "Chen Ye"
-date: "2025-04-07"
-output: html_document
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    theme: flatly
+    highlight: tango
+    df_print: kable
+---
+
 ---
 
 ```{r setup, include=FALSE}
@@ -24,17 +34,9 @@ The story revolves around five characters living in Pasadena, California:
 The show humorously explores their social awkwardness, romantic relationships, and love for science and pop culture, making it one of the most successful sitcoms of the 21st century.
 
 
-```{r cars}
-summary(cars)
-```
-![The Big Bang Theory Logo](https://en.wikipedia.org/wiki/The_Big_Bang_Theory#/media/File:The_Big_Bang_Theory_(Official_Title_Card).png)
+# 🖼️ Logo
+![Logo](https://upload.wikimedia.org/wikipedia/en/6/6f/The_Big_Bang_Theory_title_card.png)
 
-
-
-
-## Including Plots
-
-### Basic Viewership Statistics
 
 ## 📊 Viewership Summary
 
@@ -55,13 +57,6 @@ Below is a summary of the average U.S. viewership per season for *The Big Bang T
 | 11     | 24       | 2017–18          | 14.52                    |
 | 12     | 24       | 2018–19          | 17.31                    |
 library(ggplot2)
-# 
-tbbt_data <- data.frame(
-  Season = 1:12,
-  Viewers = c(8.31, 10.00, 14.23, 13.92, 15.82, 18.68, 
-              19.96, 18.63, 15.21, 14.00, 14.52, 17.31)
-)
-# 绘图
 ggplot(tbbt_data, aes(x = Season, y = Viewers)) +
   geom_line(color = "steelblue", size = 1.2) +
   geom_point(color = "darkred", size = 3) +
@@ -70,13 +65,18 @@ ggplot(tbbt_data, aes(x = Season, y = Viewers)) +
     x = "Season",
     y = "Average Viewers (Millions)"
   ) +
-  theme_minimal() +
-  scale_x_continuous(breaks = 1:12) +
-  theme(
-    plot.title = element_text(size = 14, face = "bold"),
-    axis.title = element_text(size = 12)
-  )
-ggsave("images/tbbt_viewership_trend.png", width = 8, height = 5)
+  theme_minimal()
+knitr::include_graphics("images/tbbt_viewership_trend.png")
+library(knitr)
+view_data <- data.frame(
+  Season = 1:12,
+  Episodes = c(17, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24),
+  Aired = c("2007–08", "2008–09", "2009–10", "2010–11", "2011–12", "2012–13", "2013–14",
+            "2014–15", "2015–16", "2016–17", "2017–18", "2018–19"),
+  AvgViewers = c(8.31, 10.00, 14.23, 13.92, 15.82, 18.68, 19.96, 18.63, 15.21, 14.00, 14.52, 17.31)
+)
+kable(view_data, caption = "Average Viewers by Season (Millions)", digits = 2)
+
 ## 📈 Viewership Trend Over Time
 
 ![](images/tbbt_viewership_trend.png)
@@ -94,8 +94,6 @@ Interestingly, the final season (Season 12) experienced a rebound, climbing to 1
 
 Overall, the show demonstrated a classic rise-peak-decline pattern, but still maintained strong numbers throughout its run, rarely falling below 14 million in later seasons.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
