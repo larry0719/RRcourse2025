@@ -81,7 +81,18 @@ ggsave("images/tbbt_viewership_trend.png", width = 8, height = 5)
 
 ![](images/tbbt_viewership_trend.png)
 
+📋 Viewership Trend Analysis
+The Big Bang Theory experienced notable changes in viewership across its 12-season run.
 
+From Season 1 to Season 3, the show saw a steady rise in popularity, increasing from 8.31 million to 14.23 million average viewers — a gain of approximately 5.92 million.
+
+The peak viewership occurred in Season 7 with 19.96 million average viewers, marking the height of the show’s success.
+
+After Season 7, viewership began to decline, dropping to 15.21 million by Season 9 (a decrease of 4.75 million from the peak).
+
+Interestingly, the final season (Season 12) experienced a rebound, climbing to 17.31 million, likely due to fans tuning in for the series conclusion.
+
+Overall, the show demonstrated a classic rise-peak-decline pattern, but still maintained strong numbers throughout its run, rarely falling below 14 million in later seasons.
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
