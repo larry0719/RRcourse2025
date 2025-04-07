@@ -54,6 +54,33 @@ Below is a summary of the average U.S. viewership per season for *The Big Bang T
 | 10     | 24       | 2016–17          | 14.00                    |
 | 11     | 24       | 2017–18          | 14.52                    |
 | 12     | 24       | 2018–19          | 17.31                    |
+library(ggplot2)
+# 
+tbbt_data <- data.frame(
+  Season = 1:12,
+  Viewers = c(8.31, 10.00, 14.23, 13.92, 15.82, 18.68, 
+              19.96, 18.63, 15.21, 14.00, 14.52, 17.31)
+)
+# 绘图
+ggplot(tbbt_data, aes(x = Season, y = Viewers)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  geom_point(color = "darkred", size = 3) +
+  labs(
+    title = "The Big Bang Theory - Average Viewership per Season",
+    x = "Season",
+    y = "Average Viewers (Millions)"
+  ) +
+  theme_minimal() +
+  scale_x_continuous(breaks = 1:12) +
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    axis.title = element_text(size = 12)
+  )
+ggsave("images/tbbt_viewership_trend.png", width = 8, height = 5)
+## 📈 Viewership Trend Over Time
+
+![](images/tbbt_viewership_trend.png)
+
 
 
 ```{r pressure, echo=FALSE}
