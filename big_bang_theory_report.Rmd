@@ -15,12 +15,6 @@ output:
 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
 ## 📺 Show Description
 
 *The Big Bang Theory* is an American television sitcom created by Chuck Lorre and Bill Prady. The show premiered on CBS on **September 24, 2007**, and concluded on **May 16, 2019**, airing a total of **279 episodes** over **12 seasons**.
@@ -35,7 +29,7 @@ The show humorously explores their social awkwardness, romantic relationships, a
 
 
 # 🖼️ Logo
-![Logo](https://upload.wikimedia.org/wikipedia/en/6/6f/The_Big_Bang_Theory_title_card.png)
+shell.exec(""C:\Users\MI\Desktop\RR25\RRcourse2025\TVShowRepo\The_Big_Bang_Theory.png"")  
 
 
 ## 📊 Viewership Summary
@@ -56,30 +50,23 @@ Below is a summary of the average U.S. viewership per season for *The Big Bang T
 | 10     | 24       | 2016–17          | 14.00                    |
 | 11     | 24       | 2017–18          | 14.52                    |
 | 12     | 24       | 2018–19          | 17.31                    |
-library(ggplot2)
-ggplot(tbbt_data, aes(x = Season, y = Viewers)) +
-  geom_line(color = "steelblue", size = 1.2) +
-  geom_point(color = "darkred", size = 3) +
-  labs(
-    title = "The Big Bang Theory - Average Viewership per Season",
-    x = "Season",
-    y = "Average Viewers (Millions)"
-  ) +
+
+# Plot viewership over time
+ggplot(viewership, aes(x = Season, y = US_Viewers_millions)) +
+  geom_line(color = "blue", size = 1.5) +
+  geom_point(color = "red", size = 3) +
+  labs(title = "U.S. Viewership by Season (in millions)",
+       y = "Viewers (millions)") +
+  scale_x_continuous(breaks = 1:12) +
   theme_minimal()
-knitr::include_graphics("images/tbbt_viewership_trend.png")
-library(knitr)
-view_data <- data.frame(
-  Season = 1:12,
-  Episodes = c(17, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24),
-  Aired = c("2007–08", "2008–09", "2009–10", "2010–11", "2011–12", "2012–13", "2013–14",
-            "2014–15", "2015–16", "2016–17", "2017–18", "2018–19"),
-  AvgViewers = c(8.31, 10.00, 14.23, 13.92, 15.82, 18.68, 19.96, 18.63, 15.21, 14.00, 14.52, 17.31)
-)
-kable(view_data, caption = "Average Viewers by Season (Millions)", digits = 2)
+  
+
 
 ## 📈 Viewership Trend Over Time
 
-![](images/tbbt_viewership_trend.png)
+dir.create("graphs")
+ggsave("graphs/viewership_over_time.png", width = 8, height = 5)
+
 
 📋 Viewership Trend Analysis
 The Big Bang Theory experienced notable changes in viewership across its 12-season run.
@@ -96,4 +83,3 @@ Overall, the show demonstrated a classic rise-peak-decline pattern, but still ma
 
 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
