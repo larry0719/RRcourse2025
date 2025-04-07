@@ -27,10 +27,34 @@ The show humorously explores their social awkwardness, romantic relationships, a
 ```{r cars}
 summary(cars)
 ```
+![The Big Bang Theory Logo](https://en.wikipedia.org/wiki/The_Big_Bang_Theory#/media/File:The_Big_Bang_Theory_(Official_Title_Card).png)
+
+
+
 
 ## Including Plots
 
-You can also embed plots, for example:
+### Basic Viewership Statistics
+
+## 📊 Viewership Summary
+
+Below is a summary of the average U.S. viewership per season for *The Big Bang Theory*, based on publicly available data from [Wikipedia](https://en.wikipedia.org/wiki/The_Big_Bang_Theory#Episodes):
+
+| Season | Episodes | Aired            | Avg. Viewers (Millions) |
+|--------|----------|------------------|--------------------------|
+| 1      | 17       | 2007–08          | 8.31                     |
+| 2      | 23       | 2008–09          | 10.00                    |
+| 3      | 23       | 2009–10          | 14.23                    |
+| 4      | 24       | 2010–11          | 13.92                    |
+| 5      | 24       | 2011–12          | 15.82                    |
+| 6      | 24       | 2012–13          | 18.68                    |
+| 7      | 24       | 2013–14          | 19.96                    |
+| 8      | 24       | 2014–15          | 18.63                    |
+| 9      | 24       | 2015–16          | 15.21                    |
+| 10     | 24       | 2016–17          | 14.00                    |
+| 11     | 24       | 2017–18          | 14.52                    |
+| 12     | 24       | 2018–19          | 17.31                    |
+
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
