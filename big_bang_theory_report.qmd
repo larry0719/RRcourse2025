@@ -19,9 +19,9 @@ execute:
   echo: true
   warning: false
   message: false
-
+  yaml:
+    output: "tv_show.yaml"
 ---
-
 
 ## 📺 Show Description
 
@@ -36,8 +36,7 @@ The show humorously explores their social awkwardness, romantic relationships, a
 
 ## 🖼️ Logo
 
-![](C:/Users/MI/Desktop/RR25/RRcourse2025/TVShowRepo/The_Big_Bang_Theory.png)
-
+![](images/The_Big_Bang_Theory.png)
 
 ## 📊 Viewership Summary
 
