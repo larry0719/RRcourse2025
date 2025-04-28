@@ -257,7 +257,7 @@ knitr::kable(head(mtcars[, 1:4]), "html", caption = "A kable table, ver 2")
 
 ```{r}
 #| label = "chunk_name"
-"You just put the name after the language declaration"
+"You specify it as a label"
 ```
 
 ## Using variables as parameters
