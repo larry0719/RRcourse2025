@@ -1,13 +1,27 @@
 ---
-title: "Assignment"
-author: ""
+title: "Game of Thrones Season `r params$season` Report"
+author: "Chen Ye"
 date: today
-output: html_document
+format: pdf
+params:
+  season: 1
+output: 
+  pdf_document:
+    toc: true 
+    number_sections: true
+
+
+
 ---
 
-```{r}
-load("../Data/season_1.RData")
+```{r load_data, echo=FALSE}
+season_file <- paste0("C:/Users/MI/Desktop/RR25/RRcourse2025/10. MD and Quarto 3/Data/season_", params$season, ".csv")
+season_data <- read.csv(season_file)
 ```
+
+### Season `r params$season` Summary
+
+Season `r params$season` of Game of Thrones consisted of `r nrow(season_data)` episodes...
 
 # Game of Thrones - Season 1 summary in numbers
 
@@ -50,3 +64,10 @@ Finally, the episodes with the above-average viewership were:
 | 8             | "The Pointy End" | Daniel Minahan      |
 | 9             | "Baelor" | Alan Taylor      |
 | 10            | "Fire and Blood" | Alan Taylor      |
+---
+
+
+
+
+
+
